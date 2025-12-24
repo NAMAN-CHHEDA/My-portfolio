@@ -1,0 +1,109 @@
+[
+  {
+    "id": 1,
+    "title": "Fundraising Campaign Analytics",
+    "description": "End-to-end data analytics project for a fundraising platform analyzing campaign performance, donor behavior, and transaction patterns. Features SQL data extraction, data cleaning pipelines, interactive visualizations, and a Streamlit dashboard for actionable insights.",
+    "shortDescription": "Analytics platform for campaign performance and donor insights",
+    "tags": ["Analytics", "Dashboards", "Data Engineering"],
+    "tech": ["Python", "SQL", "Pandas", "Matplotlib", "Seaborn", "Plotly", "Streamlit", "Jupyter Notebook"],
+    "repoUrl": "https://github.com/NAMAN-CHHEDA/Analytics_Project",
+    "demoUrl": "",
+    "highlights": [
+      "Built interactive Streamlit dashboard with real-time metric calculations",
+      "Implemented complex SQL queries with joins, aggregations, and window functions",
+      "Analyzed campaign success rates, donor retention, and conversion funnels",
+      "Created comprehensive data cleaning and preprocessing pipelines"
+    ],
+    "metrics": {
+      "dataset": "Campaign, donor, and transaction data",
+      "notes": "End-to-end analytics workflow from SQL extraction to interactive dashboard"
+    },
+    "images": [],
+    "featured": false
+  },
+  {
+    "id": 2,
+    "title": "Movie Recommendation System",
+    "description": "Full-stack data engineering project building a movie recommendation system using Snowflake data warehouse, Airflow for ETL orchestration, DBT for data transformation, and Preset for BI visualization. Enriches movie data using TMDB API and provides similarity-based recommendations.",
+    "shortDescription": "Data pipeline and recommendation engine with ETL workflows",
+    "tags": ["Data Engineering", "Machine Learning", "ETL"],
+    "tech": ["Python", "Snowflake", "Apache Airflow", "DBT", "Preset", "TMDB API", "SQL"],
+    "repoUrl": "https://github.com/NAMAN-CHHEDA/MOVIE-RECOMMENDATION-SYSTEM",
+    "demoUrl": "",
+    "highlights": [
+      "Designed and implemented complete ETL pipeline with Airflow DAGs",
+      "Built data warehouse models using DBT with testing and documentation",
+      "Created interactive Preset dashboard with KPI cards and visualizations",
+      "Integrated TMDB API for movie data enrichment"
+    ],
+    "metrics": {
+      "dataset": "Movie ratings and metadata",
+      "notes": "Production-ready data pipeline with orchestration and BI visualization"
+    },
+    "images": [],
+    "featured": false
+  },
+  {
+    "id": 3,
+    "title": "University Management System",
+    "description": "Comprehensive university management system for handling student, faculty, and administrative operations. Demonstrates full-stack development skills with database design, API development, and user interface implementation.",
+    "shortDescription": "Full-stack management system for university operations",
+    "tags": ["Full Stack", "Database", "Web Development"],
+    "tech": ["Python", "JavaScript", "SQL", "HTML", "CSS"],
+    "repoUrl": "https://github.com/NAMAN-CHHEDA/University-Management",
+    "demoUrl": "",
+    "highlights": [
+      "Designed relational database schema for university entities",
+      "Implemented CRUD operations for students, faculty, and courses",
+      "Built user-friendly interface for administrative tasks"
+    ],
+    "metrics": {
+      "dataset": "University management data",
+      "notes": "Full-stack application demonstrating software engineering principles"
+    },
+    "images": [],
+    "featured": false
+  },
+  {
+    "id": 4,
+    "title": "Data Warehouse Lab 1",
+    "description": "Data warehouse implementation project focusing on dimensional modeling, ETL processes, and data architecture design. Covers star schema design, fact and dimension tables, and data integration techniques.",
+    "shortDescription": "Data warehouse design and dimensional modeling",
+    "tags": ["Data Warehousing", "ETL", "Database Design"],
+    "tech": ["SQL", "DBT", "Python", "ETL"],
+    "repoUrl": "https://github.com/NAMAN-CHHEDA/My-Data-226_Lab1",
+    "demoUrl": "",
+    "highlights": [
+      "Designed star schema with fact and dimension tables",
+      "Implemented ETL processes for data integration",
+      "Applied dimensional modeling best practices"
+    ],
+    "metrics": {
+      "dataset": "Data warehouse project data",
+      "notes": "Foundation project for data warehouse concepts"
+    },
+    "images": [],
+    "featured": false
+  },
+  {
+    "id": 5,
+    "title": "Data Warehouse Lab 2",
+    "description": "Advanced data warehouse project building upon Lab 1 concepts. Focuses on advanced ETL transformations, incremental loads, data quality checks, and warehouse optimization techniques.",
+    "shortDescription": "Advanced data warehouse with ETL and optimization",
+    "tags": ["Data Warehousing", "ETL", "Data Engineering"],
+    "tech": ["SQL", "DBT", "Python", "ETL", "Data Quality"],
+    "repoUrl": "https://github.com/NAMAN-CHHEDA/DATA-226-LAB-2",
+    "demoUrl": "",
+    "highlights": [
+      "Implemented advanced ETL transformations and incremental loading",
+      "Added data quality validation and error handling",
+      "Optimized warehouse performance and query efficiency"
+    ],
+    "metrics": {
+      "dataset": "Data warehouse datasets",
+      "notes": "Advanced techniques in data warehousing and ETL"
+    },
+    "images": [],
+    "featured": false
+  }
+]
