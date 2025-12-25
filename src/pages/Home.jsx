@@ -48,7 +48,7 @@ const Home = () => {
                   Explore Projects
                 </Link>
                 <a
-                  href="/Naman Vipul Chheda_GoFundMe_20251211.pdf"
+                  href="https://drive.google.com/uc?export=download&id=1A8usaf-gFgVT1nm7DJXZPED2lmJDzplJ"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary bg-slate-900/70 text-slate-100 hover:bg-slate-800"
@@ -109,10 +109,18 @@ const Home = () => {
             <div className="relative flex justify-center lg:justify-end">
               <div className="relative h-64 w-64 sm:h-72 sm:w-72 rounded-full bg-gradient-to-tr from-sky-500 via-cyan-400 to-emerald-300 p-1.5 shadow-[0_25px_80px_rgba(56,189,248,0.35)]">
                 <div className="flex h-full w-full items-center justify-center rounded-full bg-slate-950">
+                  {/* Option 1: Use local file from public folder (if it exists) */}
+                  {/* Option 2: Use Google Drive link - Replace YOUR_PHOTO_FILE_ID with your actual Google Drive file ID */}
+                  {/* Format: https://drive.google.com/uc?export=view&id=FILE_ID */}
                   <img
                     src="/PHOTO.jpg"
                     alt="Naman Chheda portrait"
                     className="h-[92%] w-[92%] rounded-full object-cover border border-slate-800"
+                    onError={(e) => {
+                      // Fallback: If local file fails, use Google Drive
+                      // Uncomment and add your Google Drive FILE_ID below:
+                      // e.target.src = "https://drive.google.com/uc?export=view&id=YOUR_PHOTO_FILE_ID"
+                    }}
                   />
                 </div>
               </div>
@@ -614,7 +622,7 @@ const Home = () => {
                 {/* Links */}
                 <div className="flex items-center gap-4 pt-4 border-t border-slate-200 dark:border-slate-700">
                   <a 
-                    href="Virtual_Sales_Assistant_A_Chrome_Extension_for_E-commerce_Websites.pdf"
+                    href="https://drive.google.com/uc?export=download&id=1A8usaf-gFgVT1nm7DJXZPED2lmJDzplJ"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2 rounded-lg bg-sky-500/10 hover:bg-sky-500/20 border border-sky-500/30 hover:border-sky-500/50 text-sm font-medium text-sky-700 dark:text-sky-300 transition-all duration-200 group/link"
@@ -675,7 +683,7 @@ const Home = () => {
                 {/* Links */}
                 <div className="flex items-center gap-4 pt-4 border-t border-slate-200 dark:border-slate-700">
                   <a 
-                    href="Expert_Patient_Interaction_Language_Model_EPILM.pdf"
+                    href="https://drive.google.com/uc?export=download&id=1A8usaf-gFgVT1nm7DJXZPED2lmJDzplJ"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 hover:border-purple-500/50 text-sm font-medium text-purple-700 dark:text-purple-300 transition-all duration-200 group/link"

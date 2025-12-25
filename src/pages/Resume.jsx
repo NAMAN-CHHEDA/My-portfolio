@@ -1,10 +1,16 @@
 const Resume = () => {
+  // Replace with your Google Drive link
+  // Format: https://drive.google.com/file/d/FILE_ID/preview (for iframe)
+  // Get FILE_ID from your Google Drive shareable link
+  const resumeDriveLink = "https://drive.google.com/file/d/1A8usaf-gFgVT1nm7DJXZPED2lmJDzplJ/preview"
+  const resumeDownloadLink = "https://drive.google.com/uc?export=download&id=1A8usaf-gFgVT1nm7DJXZPED2lmJDzplJ"
+
   return (
     <div className="section-container max-w-5xl mx-auto">
       <div className="text-center mb-8">
         <h1 className="text-4xl sm:text-5xl font-bold mb-4">Resume</h1>
         <a
-          href="Naman Vipul Chheda_GoFundMe_20251211.pdf"
+          href={resumeDownloadLink}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-primary inline-flex items-center"
@@ -16,13 +22,17 @@ const Resume = () => {
         </a>
       </div>
 
-      {/* PDF Embed only */}
+      {/* PDF Embed from Google Drive */}
       <div className="card">
         <iframe
-          src="Naman Vipul Chheda_GoFundMe_20251211.pdf"
+          src={resumeDriveLink}
           className="w-full h-[800px] rounded-lg border border-gray-200 dark:border-gray-700"
           title="Resume PDF"
+          allow="autoplay"
         />
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 text-center">
+          Having trouble viewing? <a href={resumeDownloadLink} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Download PDF</a>
+        </p>
       </div>
     </div>
   )
