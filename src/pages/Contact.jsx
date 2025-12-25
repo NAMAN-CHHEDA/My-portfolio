@@ -1,4 +1,39 @@
+import { useState } from 'react'
+
 const Contact = () => {
+  const [showSuccess, setShowSuccess] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    const form = e.target
+    const formData = new FormData(form)
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Accept: 'application/json',
+        },
+      })
+
+      if (response.ok) {
+        setShowSuccess(true)
+        form.reset()
+        setTimeout(() => setShowSuccess(false), 5000) // Hide after 5 seconds
+      } else {
+        alert('Something went wrong. Please try again.')
+      }
+    } catch (error) {
+      alert('Something went wrong. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <div className="section-container max-w-3xl mx-auto">
       <div className="text-center mb-12">
@@ -22,7 +57,7 @@ const Contact = () => {
               </svg>
             </div>
             <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">Email</h3>
-            <p className="text-sky-600 dark:text-sky-400 font-medium">namanvipul.chheda@sjsu.edu</p>
+            <p className="text-sky-600 dark:text-sky-400 font-medium text-sm break-words px-2">namanvipul.chheda@sjsu.edu</p>
           </div>
         </a>
 
@@ -82,9 +117,24 @@ const Contact = () => {
             </p>
           </div>
 
+          {showSuccess && (
+            <div className="mb-6 p-4 rounded-xl bg-gradient-to-r from-emerald-500/10 to-green-500/10 border-2 border-emerald-500/30 flex items-center gap-3 animate-slide-up">
+              <div className="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <p className="font-semibold text-emerald-700 dark:text-emerald-300">Message Sent Successfully!</p>
+                <p className="text-sm text-emerald-600 dark:text-emerald-400">Thank you for reaching out. I'll get back to you soon.</p>
+              </div>
+            </div>
+          )}
+
           <form
             action="https://formspree.io/f/mojaobjl"
             method="POST"
+            onSubmit={handleSubmit}
             className="space-y-6"
           >
             <div>
@@ -97,6 +147,20 @@ const Contact = () => {
                 name="name"
                 required
                 placeholder="Your Name"
+                className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-all duration-200 placeholder:text-gray-400 dark:placeholder:text-gray-500"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="email" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                Your Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="Write your email here"
                 className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-all duration-200 placeholder:text-gray-400 dark:placeholder:text-gray-500"
               />
             </div>
@@ -117,12 +181,25 @@ const Contact = () => {
 
             <button 
               type="submit" 
-              className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-purple-500 text-white font-semibold hover:from-sky-600 hover:to-purple-600 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02] flex items-center justify-center gap-2"
+              disabled={isSubmitting}
+              className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-purple-500 text-white font-semibold hover:from-sky-600 hover:to-purple-600 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02] flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-              </svg>
-              Send Message
+              {isSubmitting ? (
+                <>
+                  <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                  </svg>
+                  Send Message
+                </>
+              )}
             </button>
           </form>
         </div>

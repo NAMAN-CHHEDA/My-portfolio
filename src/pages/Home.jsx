@@ -48,7 +48,7 @@ const Home = () => {
                   Explore Projects
                 </Link>
                 <a
-                  href="https://drive.google.com/uc?export=download&id=1A8usaf-gFgVT1nm7DJXZPED2lmJDzplJ"
+                  href="https://drive.google.com/file/d/1A8usaf-gFgVT1nm7DJXZPED2lmJDzplJ/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary bg-slate-900/70 text-slate-100 hover:bg-slate-800"
@@ -250,112 +250,176 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Work Experience - Interactive Timeline */}
+      {/* Education & Work Experience - Side by Side */}
       <section className="section-container">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-2">Work Experience</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-2">Education & Experience</h2>
           <p className="text-gray-600 dark:text-gray-400">
-            Journey through my professional roles and achievements
+            Academic journey and professional milestones
           </p>
         </div>
         
-        <div className="relative max-w-4xl mx-auto">
-          {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-sky-500 via-purple-500 to-emerald-500 hidden md:block" />
-          
-          <div className="space-y-8">
-            {/* Experience 1 */}
-            <div className="relative group">
-              <div className="flex flex-col md:flex-row gap-6 items-start">
-                {/* Timeline dot */}
-                <div className="absolute left-6 w-4 h-4 rounded-full bg-gradient-to-r from-sky-500 to-purple-500 border-4 border-white dark:border-slate-900 shadow-lg z-10 hidden md:block group-hover:scale-125 transition-transform duration-300" />
-                
-                {/* Date badge */}
-                <div className="md:w-32 flex-shrink-0 pt-1">
-                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-sky-500/10 to-purple-500/10 border border-sky-500/30 text-sm font-semibold text-sky-600 dark:text-sky-400">
-                    2024
+        <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+          {/* Education - Left Side */}
+          <div>
+            <h3 className="text-2xl font-bold mb-6 text-center lg:text-left text-sky-600 dark:text-sky-400">Education</h3>
+            <div className="relative">
+              {/* Creative Timeline - Left side */}
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-sky-500 via-purple-500 to-emerald-500 rounded-full hidden lg:block" />
+              
+              <div className="space-y-6 pl-8 lg:pl-12">
+                {/* Masters */}
+                <div className="relative group">
+                  {/* Timeline dot */}
+                  <div className="absolute -left-4 lg:-left-6 top-6 w-3 h-3 rounded-full bg-gradient-to-r from-sky-500 to-purple-500 border-4 border-white dark:border-slate-900 shadow-lg z-10 group-hover:scale-150 transition-transform duration-300" />
+                  
+                  {/* Year badge - Creative design */}
+                  <div className="absolute -left-12 lg:-left-16 top-4 hidden lg:flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-sky-500 to-purple-500 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                    <span className="text-white font-bold text-xs">2027</span>
+                  </div>
+                  
+                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-sky-500/10 via-purple-500/10 to-emerald-500/10 border-2 border-sky-500/20 dark:border-sky-500/30 p-6 hover:border-sky-500/40 dark:hover:border-sky-500/50 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-purple-500 flex items-center justify-center text-white text-xl font-bold shadow-lg">
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-lg font-bold text-slate-900 dark:text-white">M.S. Applied Data Intelligence</h4>
+                        <p className="text-sm text-sky-600 dark:text-sky-400 font-medium">San Jose State University</p>
+                      </div>
+                    </div>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-xs font-semibold text-sky-700 dark:text-sky-300 mb-3">
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      August 2025 - May 2027
+                    </div>
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      {['Data Mining', 'ML', 'Statistics', 'Databases'].slice(0, 4).map((c) => (
+                        <span key={c} className="px-2 py-1 rounded-lg bg-white/80 dark:bg-slate-800/80 text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+                          {c}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-                
-                {/* Content card */}
-                <div className="flex-1 group-hover:scale-[1.02] transition-all duration-300">
-                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-2xl p-6">
-                    {/* Gradient overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-sky-500/5 via-purple-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    
-                    <div className="relative">
-                      <div className="flex items-start justify-between gap-4 mb-3">
-                        <div className="flex items-center gap-3">
-                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-purple-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                            DA
-                          </div>
-                          <div>
-                            <h3 className="text-xl font-bold text-slate-900 dark:text-white">Data Analyst Intern</h3>
-                            <p className="text-sm text-sky-600 dark:text-sky-400 font-medium">Inventure Growth and Securities Limited</p>
-                          </div>
-                        </div>
+
+                {/* Bachelors */}
+                <div className="relative group">
+                  {/* Timeline dot */}
+                  <div className="absolute -left-4 lg:-left-6 top-6 w-3 h-3 rounded-full bg-gradient-to-r from-purple-500 to-emerald-500 border-4 border-white dark:border-slate-900 shadow-lg z-10 group-hover:scale-150 transition-transform duration-300" />
+                  
+                  {/* Year badge */}
+                  <div className="absolute -left-12 lg:-left-16 top-4 hidden lg:flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-emerald-500 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                    <span className="text-white font-bold text-xs">2025</span>
+                  </div>
+                  
+                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500/10 via-emerald-500/10 to-sky-500/10 border-2 border-purple-500/20 dark:border-purple-500/30 p-6 hover:border-purple-500/40 dark:hover:border-purple-500/50 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-emerald-500 flex items-center justify-center text-white text-xl font-bold shadow-lg">
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                        </svg>
                       </div>
-                      
-                      <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">
-                        Built dashboards, cleaned datasets, and delivered weekly insights to stakeholders.
-                      </p>
-                      
-                      <div className="space-y-2">
-                        <div className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-                          <svg className="w-5 h-5 text-sky-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <span>Created KPI dashboards (Power BI / Python) for campaign and donor metrics</span>
-                        </div>
-                        <div className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-                          <svg className="w-5 h-5 text-sky-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <span>Automated data quality checks and descriptive analyses for leadership</span>
-                        </div>
+                      <div className="flex-1">
+                        <h4 className="text-lg font-bold text-slate-900 dark:text-white">B.Tech CSE (Data Science)</h4>
+                        <p className="text-sm text-purple-600 dark:text-purple-400 font-medium">DJ Sanghvi College</p>
                       </div>
+                    </div>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-xs font-semibold text-purple-700 dark:text-purple-300 mb-3">
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      December 2021 - May 2025
+                    </div>
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      {['DBMS', 'DSA', 'ML', 'DL'].slice(0, 4).map((c) => (
+                        <span key={c} className="px-2 py-1 rounded-lg bg-white/80 dark:bg-slate-800/80 text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+                          {c}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Experience 2 */}
-            <div className="relative group">
-              <div className="flex flex-col md:flex-row gap-6 items-start">
-                {/* Timeline dot */}
-                <div className="absolute left-6 w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-emerald-500 border-4 border-white dark:border-slate-900 shadow-lg z-10 hidden md:block group-hover:scale-125 transition-transform duration-300" />
-                
-                {/* Date badge */}
-                <div className="md:w-32 flex-shrink-0 pt-1">
-                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-purple-500/10 to-emerald-500/10 border border-purple-500/30 text-sm font-semibold text-purple-600 dark:text-purple-400">
-                    2023
+          {/* Work Experience - Right Side */}
+          <div>
+            <h3 className="text-2xl font-bold mb-6 text-center lg:text-left text-purple-600 dark:text-purple-400">Work Experience</h3>
+            <div className="relative">
+              {/* Creative Timeline - Right side */}
+              <div className="absolute right-0 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 via-pink-500 to-emerald-500 rounded-full hidden lg:block" />
+              
+              <div className="space-y-6 pr-8 lg:pr-12">
+                {/* Experience 1 */}
+                <div className="relative group">
+                  {/* Timeline dot */}
+                  <div className="absolute -right-4 lg:-right-6 top-6 w-3 h-3 rounded-full bg-gradient-to-r from-sky-500 to-purple-500 border-4 border-white dark:border-slate-900 shadow-lg z-10 group-hover:scale-150 transition-transform duration-300" />
+                  
+                  {/* Year badge - Creative design */}
+                  <div className="absolute -right-12 lg:-right-16 top-4 hidden lg:flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-sky-500 to-purple-500 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                    <span className="text-white font-bold text-xs">2024</span>
+                  </div>
+                  
+                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-sky-500/10 via-purple-500/10 to-emerald-500/10 border-2 border-sky-500/20 dark:border-sky-500/30 p-6 hover:border-sky-500/40 dark:hover:border-sky-500/50 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-purple-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                        DA
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-lg font-bold text-slate-900 dark:text-white">Data Analyst Intern</h4>
+                        <p className="text-sm text-sky-600 dark:text-sky-400 font-medium">Inventure Growth & Securities</p>
+                      </div>
+                    </div>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-3">
+                      Built dashboards, cleaned datasets, and delivered weekly insights to stakeholders.
+                    </p>
+                    <div className="space-y-1.5">
+                      <div className="flex items-start gap-2 text-xs text-gray-700 dark:text-gray-300">
+                        <svg className="w-4 h-4 text-sky-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>KPI dashboards (Power BI / Python)</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs text-gray-700 dark:text-gray-300">
+                        <svg className="w-4 h-4 text-sky-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>Automated data quality checks</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                
-                {/* Content card */}
-                <div className="flex-1 group-hover:scale-[1.02] transition-all duration-300">
-                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-2xl p-6">
-                    {/* Gradient overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-emerald-500/5 to-sky-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    
-                    <div className="relative">
-                      <div className="flex items-start justify-between gap-4 mb-3">
-                        <div className="flex items-center gap-3">
-                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                            CM
-                          </div>
-                          <div>
-                            <h3 className="text-xl font-bold text-slate-900 dark:text-white">Competitive Programming Mentor</h3>
-                            <p className="text-sm text-purple-600 dark:text-purple-400 font-medium">DJS Compute</p>
-                          </div>
-                        </div>
+
+                {/* Experience 2 */}
+                <div className="relative group">
+                  {/* Timeline dot */}
+                  <div className="absolute -right-4 lg:-right-6 top-6 w-3 h-3 rounded-full bg-gradient-to-r from-purple-500 to-emerald-500 border-4 border-white dark:border-slate-900 shadow-lg z-10 group-hover:scale-150 transition-transform duration-300" />
+                  
+                  {/* Year badge */}
+                  <div className="absolute -right-12 lg:-right-16 top-4 hidden lg:flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-emerald-500 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                    <span className="text-white font-bold text-xs">2023</span>
+                  </div>
+                  
+                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500/10 via-emerald-500/10 to-sky-500/10 border-2 border-purple-500/20 dark:border-purple-500/30 p-6 hover:border-purple-500/40 dark:hover:border-purple-500/50 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                        CM
                       </div>
-                      
-                      <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">
-                        Mentored over 25 students in competitive programming, enhancing their analytical skills and problem-solving abilities through structured guidance, clear documentation, and a demonstrated passion for organization.
-                      </p>
+                      <div className="flex-1">
+                        <h4 className="text-lg font-bold text-slate-900 dark:text-white">Competitive Programming Mentor</h4>
+                        <p className="text-sm text-purple-600 dark:text-purple-400 font-medium">DJS Compute</p>
+                      </div>
                     </div>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                      Mentored over 25 students in competitive programming, enhancing analytical skills and problem-solving abilities.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -454,132 +518,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Education - Interactive Cards */}
-      <section className="section-container bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-2">Education</h2>
-          <p className="text-gray-600 dark:text-gray-400">Academic journey and learning milestones</p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          {/* Masters Degree */}
-          <div className="group relative">
-            <div className="h-full relative overflow-hidden rounded-2xl bg-gradient-to-br from-sky-500/10 via-purple-500/10 to-emerald-500/10 border-2 border-sky-500/20 dark:border-sky-500/30 p-6 hover:border-sky-500/40 dark:hover:border-sky-500/50 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
-              {/* Decorative gradient circle */}
-              <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-gradient-to-br from-sky-500/20 to-purple-500/20 blur-3xl group-hover:scale-150 transition-transform duration-500" />
-              
-              <div className="relative z-10">
-                {/* Degree Icon */}
-                <div className="mb-4 flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-sky-500 to-purple-500 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">M.S. Applied Data Intelligence</h3>
-                    <p className="text-sm text-sky-600 dark:text-sky-400 font-medium">San Jose State University</p>
-                  </div>
-                </div>
-                
-                {/* Graduation Date */}
-                <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sm font-semibold text-sky-700 dark:text-sky-300">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <span>Graduation: May 2027</span>
-                </div>
-                
-                {/* Coursework */}
-                <div className="mt-5">
-                  <p className="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-3 flex items-center gap-2">
-                    <span className="w-1 h-4 bg-gradient-to-b from-sky-500 to-purple-500 rounded-full"></span>
-                    Relevant Coursework
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      'Data Mining',
-                      'Machine Learning',
-                      'Statistical Methods',
-                      'Database Systems',
-                      'Data Visualization',
-                      'Predictive Modeling',
-                    ].map((c) => (
-                      <span 
-                        key={c} 
-                        className="px-3 py-1.5 rounded-lg bg-white/80 dark:bg-slate-800/80 text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-sky-400 dark:hover:border-sky-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors duration-200"
-                      >
-                        {c}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Bachelors Degree */}
-          <div className="group relative">
-            <div className="h-full relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500/10 via-emerald-500/10 to-sky-500/10 border-2 border-purple-500/20 dark:border-purple-500/30 p-6 hover:border-purple-500/40 dark:hover:border-purple-500/50 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
-              {/* Decorative gradient circle */}
-              <div className="absolute -top-20 -left-20 w-40 h-40 rounded-full bg-gradient-to-br from-purple-500/20 to-emerald-500/20 blur-3xl group-hover:scale-150 transition-transform duration-500" />
-              
-              <div className="relative z-10">
-                {/* Degree Icon */}
-                <div className="mb-4 flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-emerald-500 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">B.Tech CSE (Data Science)</h3>
-                    <p className="text-sm text-purple-600 dark:text-purple-400 font-medium">DJ Sanghvi College of Engineering</p>
-                    <p className="text-xs text-purple-500 dark:text-purple-500 mt-0.5">Honors in Computational Finance</p>
-                  </div>
-                </div>
-                
-                {/* Graduation Date */}
-                <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-sm font-semibold text-purple-700 dark:text-purple-300">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <span>Graduation: May 2025</span>
-                </div>
-                
-                {/* Coursework */}
-                <div className="mt-5">
-                  <p className="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-3 flex items-center gap-2">
-                    <span className="w-1 h-4 bg-gradient-to-b from-purple-500 to-emerald-500 rounded-full"></span>
-                    Relevant Coursework
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      'Database Management Systems',
-                      'Data Structures & Algorithms',
-                      'Machine Learning',
-                      'Deep Learning',
-                      'Computational Linguistics',
-                      'Time Series Analysis',
-                    ].map((c) => (
-                      <span 
-                        key={c} 
-                        className="px-3 py-1.5 rounded-lg bg-white/80 dark:bg-slate-800/80 text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-purple-400 dark:hover:border-purple-500 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200"
-                      >
-                        {c}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Publications - Interactive Cards */}
       <section className="section-container bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900">
@@ -622,7 +560,7 @@ const Home = () => {
                 {/* Links */}
                 <div className="flex items-center gap-4 pt-4 border-t border-slate-200 dark:border-slate-700">
                   <a 
-                    href="https://drive.google.com/uc?export=download&id=1A8usaf-gFgVT1nm7DJXZPED2lmJDzplJ"
+                    href="https://drive.google.com/file/d/1H06J0qlUirjy7-__2CclFzLMBdI7TzK7/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2 rounded-lg bg-sky-500/10 hover:bg-sky-500/20 border border-sky-500/30 hover:border-sky-500/50 text-sm font-medium text-sky-700 dark:text-sky-300 transition-all duration-200 group/link"
@@ -683,7 +621,7 @@ const Home = () => {
                 {/* Links */}
                 <div className="flex items-center gap-4 pt-4 border-t border-slate-200 dark:border-slate-700">
                   <a 
-                    href="https://drive.google.com/uc?export=download&id=1A8usaf-gFgVT1nm7DJXZPED2lmJDzplJ"
+                    href="https://drive.google.com/file/d/1WPhqNhke3xiVn8ZJ-n9smAaCC3nmmo-n/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 hover:border-purple-500/50 text-sm font-medium text-purple-700 dark:text-purple-300 transition-all duration-200 group/link"
