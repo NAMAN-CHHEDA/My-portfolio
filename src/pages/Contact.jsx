@@ -65,61 +65,67 @@ const Contact = () => {
         </a>
       </div>
 
-      {/* Optional Contact Form */}
-      <div className="card">
-        <h2 className="text-2xl font-bold mb-4">Send a Message</h2>
-        <p className="text-gray-600 dark:text-gray-400 mb-6">
-          You can also reach out via email directly, or use the form below if you prefer.
-        </p>
-        <form
-          action="https://formspree.io/f/YOUR_FORM_ID"
-          method="POST"
-          className="space-y-4"
-        >
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
+      {/* Contact Form */}
+      <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-sky-500/10 via-purple-500/10 to-emerald-500/10 border-2 border-sky-500/20 dark:border-sky-500/30 p-8 hover:border-sky-500/40 dark:hover:border-sky-500/50 transition-all duration-300 hover:shadow-2xl">
+        <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-gradient-to-br from-sky-500/20 to-purple-500/20 blur-3xl group-hover:scale-150 transition-transform duration-500" />
+        
+        <div className="relative z-10">
+          <div className="text-center mb-8">
+            <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-sky-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+              </svg>
+            </div>
+            <h2 className="text-3xl font-bold mb-2 text-slate-900 dark:text-white">Send a Message</h2>
+            <p className="text-gray-600 dark:text-gray-400">
+              Have a question or want to collaborate? Drop me a message!
+            </p>
           </div>
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
-          </div>
-          <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              required
-              className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
-          </div>
-          <button type="submit" className="btn-primary w-full">
-            Send Message
-          </button>
-          <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-            Note: To enable the contact form, replace YOUR_FORM_ID in Contact.jsx with your Formspree form ID.
-            Or remove this form section if you prefer email-only contact.
-          </p>
-        </form>
+
+          <form
+            action="https://formspree.io/f/mojaobjl"
+            method="POST"
+            className="space-y-6"
+          >
+            <div>
+              <label htmlFor="name" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                Your Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="John Doe"
+                className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-all duration-200 placeholder:text-gray-400 dark:placeholder:text-gray-500"
+              />
+            </div>
+            
+            <div>
+              <label htmlFor="message" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                required
+                placeholder="Tell me about your project, question, or just say hello..."
+                className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-all duration-200 resize-none placeholder:text-gray-400 dark:placeholder:text-gray-500"
+              />
+            </div>
+
+            <button 
+              type="submit" 
+              className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-purple-500 text-white font-semibold hover:from-sky-600 hover:to-purple-600 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02] flex items-center justify-center gap-2"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+              </svg>
+              Send Message
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   )
