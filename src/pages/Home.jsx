@@ -1,8 +1,26 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { projects } from '../data/projects.js'
 
 const Home = () => {
   const featuredProjects = projects.filter((p) => p.featured).slice(0, 3)
+
+  // Rotating titles
+  const titles = ['Data Analyst', 'Data Scientist', 'Data Engineer', 'Business Analyst']
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0)
+  const [isVisible, setIsVisible] = useState(true)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsVisible(false)
+      setTimeout(() => {
+        setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titles.length)
+        setIsVisible(true)
+      }, 300) // Fade out duration
+    }, 3200) // Change title every 4 seconds
+
+    return () => clearInterval(interval)
+  }, [titles.length])
 
   return (
     <div>
@@ -31,6 +49,17 @@ const Home = () => {
                     Chheda
                   </span>
                 </h1>
+                {/* Rotating Title */}
+                <div className="mt-4 h-8 sm:h-10 lg:h-12 flex items-center">
+                  <span
+                    key={currentTitleIndex}
+                    className={`text-lg sm:text-xl lg:text-2xl font-semibold bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-300 bg-clip-text text-transparent transition-opacity duration-300 ${
+                      isVisible ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    {titles[currentTitleIndex]}
+                  </span>
+                </div>
               </div>
 
               <p className="max-w-xl text-sm leading-relaxed text-slate-300 sm:text-base">
